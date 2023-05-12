@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Two-Station Metro Train Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDae4rKVrWea3UftqwpWCEBqft5g9A-RTM"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        // Initialize the map
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 49.246292, lng: -123.116226 },
+                zoom: 12,
+            });
+
+            // Add markers for the stations
+            //The latitude of Vancouver, BC, Canada is 49.246292, and the longitude is -123.116226.
+            const station1Marker = new google.maps.Marker({
+                position: { lat: 49.246292, lng: -123.116226 },
+                map: map,
+                title: "Station 1",
+            });
+
+            //Latitude and longitude coordinates are: 49.246445, -122.994560. Burnaby is a city in British Columbia, Canada, located to the east of the City of Vancouver.
+            const station2Marker = new google.maps.Marker({
+                position: { lat: 49.246445, lng: -122.994560 },
+                map: map,
+                title: "Station 2",
+            });
+        }
+        // Load the map when the page finishes loading
+        window.addEventListener("load", () => {
+    initMap();
+});
+    </script>
+</body>
+
+</html>
